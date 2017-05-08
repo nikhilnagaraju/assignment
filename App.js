@@ -8742,7 +8742,7 @@ var _user$project$App$scanareaScreen = function (model) {
 										_elm_lang$html$Html$div,
 										{
 											ctor: '::',
-											_0: _elm_lang$html$Html_Attributes$class('col-xs-5 col-md-5'),
+											_0: _elm_lang$html$Html_Attributes$class('row'),
 											_1: {ctor: '[]'}
 										},
 										{
@@ -8763,7 +8763,7 @@ var _user$project$App$scanareaScreen = function (model) {
 											_elm_lang$html$Html$div,
 											{
 												ctor: '::',
-												_0: _elm_lang$html$Html_Attributes$class('list-group'),
+												_0: _elm_lang$html$Html_Attributes$class('list-group row'),
 												_1: {
 													ctor: '::',
 													_0: _elm_lang$html$Html_Attributes$style(
@@ -8785,7 +8785,7 @@ var _user$project$App$scanareaScreen = function (model) {
 														_1: {
 															ctor: '::',
 															_0: _elm_lang$html$Html_Events$onClick(
-																_user$project$App$ClickUser('Vinay')),
+																_user$project$App$ClickUser('sachin')),
 															_1: {ctor: '[]'}
 														}
 													},
@@ -8805,7 +8805,7 @@ var _user$project$App$scanareaScreen = function (model) {
 																	{ctor: '[]'},
 																	{
 																		ctor: '::',
-																		_0: _elm_lang$html$Html$text('Teacher'),
+																		_0: _elm_lang$html$Html$text('Student'),
 																		_1: {ctor: '[]'}
 																	}),
 																_1: {ctor: '[]'}
@@ -8817,7 +8817,7 @@ var _user$project$App$scanareaScreen = function (model) {
 																{ctor: '[]'},
 																{
 																	ctor: '::',
-																	_0: _elm_lang$html$Html$text('Vinay '),
+																	_0: _elm_lang$html$Html$text('Sachin'),
 																	_1: {ctor: '[]'}
 																}),
 															_1: {
@@ -8844,7 +8844,7 @@ var _user$project$App$scanareaScreen = function (model) {
 															_1: {
 																ctor: '::',
 																_0: _elm_lang$html$Html_Events$onClick(
-																	_user$project$App$ClickUser('Jeorge')),
+																	_user$project$App$ClickUser('vinay')),
 																_1: {ctor: '[]'}
 															}
 														},
@@ -8864,7 +8864,7 @@ var _user$project$App$scanareaScreen = function (model) {
 																		{ctor: '[]'},
 																		{
 																			ctor: '::',
-																			_0: _elm_lang$html$Html$text('Student'),
+																			_0: _elm_lang$html$Html$text('Teacher'),
 																			_1: {ctor: '[]'}
 																		}),
 																	_1: {ctor: '[]'}
@@ -8876,7 +8876,7 @@ var _user$project$App$scanareaScreen = function (model) {
 																	{ctor: '[]'},
 																	{
 																		ctor: '::',
-																		_0: _elm_lang$html$Html$text('Jeorge'),
+																		_0: _elm_lang$html$Html$text('Vinay'),
 																		_1: {ctor: '[]'}
 																	}),
 																_1: {
@@ -8903,7 +8903,7 @@ var _user$project$App$scanareaScreen = function (model) {
 																_1: {
 																	ctor: '::',
 																	_0: _elm_lang$html$Html_Events$onClick(
-																		_user$project$App$ClickUser('Hussain')),
+																		_user$project$App$ClickUser('chuck')),
 																	_1: {ctor: '[]'}
 																}
 															},
@@ -8923,7 +8923,7 @@ var _user$project$App$scanareaScreen = function (model) {
 																			{ctor: '[]'},
 																			{
 																				ctor: '::',
-																				_0: _elm_lang$html$Html$text('Teacher'),
+																				_0: _elm_lang$html$Html$text('Student'),
 																				_1: {ctor: '[]'}
 																			}),
 																		_1: {ctor: '[]'}
@@ -8935,7 +8935,7 @@ var _user$project$App$scanareaScreen = function (model) {
 																		{ctor: '[]'},
 																		{
 																			ctor: '::',
-																			_0: _elm_lang$html$Html$text('Hussain '),
+																			_0: _elm_lang$html$Html$text('Chuck '),
 																			_1: {ctor: '[]'}
 																		}),
 																	_1: {
@@ -8962,7 +8962,7 @@ var _user$project$App$scanareaScreen = function (model) {
 																	_1: {
 																		ctor: '::',
 																		_0: _elm_lang$html$Html_Events$onClick(
-																			_user$project$App$ClickUser('Javed')),
+																			_user$project$App$ClickUser('robb')),
 																		_1: {ctor: '[]'}
 																	}
 																},
@@ -8994,7 +8994,7 @@ var _user$project$App$scanareaScreen = function (model) {
 																			{ctor: '[]'},
 																			{
 																				ctor: '::',
-																				_0: _elm_lang$html$Html$text('Javed '),
+																				_0: _elm_lang$html$Html$text('Robb '),
 																				_1: {ctor: '[]'}
 																			}),
 																		_1: {
@@ -9070,7 +9070,67 @@ var _user$project$App$scanareaScreen = function (model) {
 																			}
 																		}
 																	}),
-																_1: {ctor: '[]'}
+																_1: {
+																	ctor: '::',
+																	_0: A2(
+																		_elm_lang$html$Html$a,
+																		{
+																			ctor: '::',
+																			_0: _elm_lang$html$Html_Attributes$class('list-group-item list-group-item-action list-group-item-info align-items-start'),
+																			_1: {
+																				ctor: '::',
+																				_0: _elm_lang$html$Html_Events$onClick(
+																					_user$project$App$ClickUser('praveen')),
+																				_1: {ctor: '[]'}
+																			}
+																		},
+																		{
+																			ctor: '::',
+																			_0: A2(
+																				_elm_lang$html$Html$span,
+																				{
+																					ctor: '::',
+																					_0: _elm_lang$html$Html_Attributes$class('badge'),
+																					_1: {ctor: '[]'}
+																				},
+																				{
+																					ctor: '::',
+																					_0: A2(
+																						_elm_lang$html$Html$h4,
+																						{ctor: '[]'},
+																						{
+																							ctor: '::',
+																							_0: _elm_lang$html$Html$text('Student'),
+																							_1: {ctor: '[]'}
+																						}),
+																					_1: {ctor: '[]'}
+																				}),
+																			_1: {
+																				ctor: '::',
+																				_0: A2(
+																					_elm_lang$html$Html$h4,
+																					{ctor: '[]'},
+																					{
+																						ctor: '::',
+																						_0: _elm_lang$html$Html$text('praveen'),
+																						_1: {ctor: '[]'}
+																					}),
+																				_1: {
+																					ctor: '::',
+																					_0: A2(
+																						_elm_lang$html$Html$p,
+																						{ctor: '[]'},
+																						{
+																							ctor: '::',
+																							_0: _elm_lang$html$Html$text('Courses : Java'),
+																							_1: {ctor: '[]'}
+																						}),
+																					_1: {ctor: '[]'}
+																				}
+																			}
+																		}),
+																	_1: {ctor: '[]'}
+																}
 															}
 														}
 													}
@@ -9192,7 +9252,7 @@ var _user$project$App$contactScreen = function (model) {
 								_elm_lang$html$Html$h2,
 								{
 									ctor: '::',
-									_0: _elm_lang$html$Html_Attributes$class(''),
+									_0: _elm_lang$html$Html_Attributes$class(' text-center'),
 									_1: {ctor: '[]'}
 								},
 								{
@@ -9206,7 +9266,7 @@ var _user$project$App$contactScreen = function (model) {
 									_elm_lang$html$Html$div,
 									{
 										ctor: '::',
-										_0: _elm_lang$html$Html_Attributes$class(' jumbotronTransp jumbotron  row'),
+										_0: _elm_lang$html$Html_Attributes$class('   row'),
 										_1: {ctor: '[]'}
 									},
 									{
@@ -9215,7 +9275,7 @@ var _user$project$App$contactScreen = function (model) {
 											_elm_lang$html$Html$div,
 											{
 												ctor: '::',
-												_0: _elm_lang$html$Html_Attributes$class('col-md-6'),
+												_0: _elm_lang$html$Html_Attributes$class('col-md-offset-4 col-md-5'),
 												_1: {ctor: '[]'}
 											},
 											{
@@ -9224,23 +9284,14 @@ var _user$project$App$contactScreen = function (model) {
 													_elm_lang$html$Html$div,
 													{
 														ctor: '::',
-														_0: _elm_lang$html$Html_Attributes$class('text-left'),
+														_0: _elm_lang$html$Html_Attributes$class('jumbotronTranspMod jumbotron text-left'),
 														_1: {ctor: '[]'}
 													},
 													{
 														ctor: '::',
 														_0: A2(
 															_elm_lang$html$Html$table,
-															{
-																ctor: '::',
-																_0: _elm_lang$html$Html_Attributes$style(
-																	{
-																		ctor: '::',
-																		_0: {ctor: '_Tuple2', _0: 'cell-padding', _1: '10px'},
-																		_1: {ctor: '[]'}
-																	}),
-																_1: {ctor: '[]'}
-															},
+															{ctor: '[]'},
 															{
 																ctor: '::',
 																_0: A2(
@@ -10362,7 +10413,11 @@ var _user$project$App$signinScreen = function (model) {
 																		ctor: '::',
 																		_0: A2(
 																			_elm_lang$html$Html$hr,
-																			{ctor: '[]'},
+																			{
+																				ctor: '::',
+																				_0: _elm_lang$html$Html_Attributes$class('hr'),
+																				_1: {ctor: '[]'}
+																			},
 																			{ctor: '[]'}),
 																		_1: {
 																			ctor: '::',
