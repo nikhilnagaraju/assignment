@@ -32,14 +32,6 @@ type alias Model =
 init : Model
 init = Model "" "" "" "" "" "" "" "1" ""
 
--- Array of users
-vinay_data_model = Model "vinay" "1234" "vinay@gmail.com" "+91789654123" "teacher" "java, c, c++" "" "1" ""
-user2 = Model "Jeorge" "1234" "jeorge@gmail.com" "+91789654123" "seeker" "java" "" "1" ""
-user3 = Model "Hussain" "1234" "hussain@gmail.com" "+91789654123" "teacher" "javascript, html" "" "1" ""
-user4 = Model "Javed" "1234" "javed@gmail.com" "+918892585434" "teacher" "python" "" "1" ""
-
-userList = [vinay_data_model, user2, user3, user4]
-
 
 checkUser : List Model -> String -> String -> Bool
 checkUser models name pass =
@@ -62,16 +54,16 @@ getUser models name =
 --appendUser : Model -> String
 --appendUser model = 
 --    model::userList
-
-patternName = Regex.regex "[a-zA-Z_ ]+" 
-
+--pattern to match any name accepting any name with valid alphabets only
+patternName = Regex.regex "[A-Za-z_ ]+" 
+--pattern to match any phone number to accept valid 12 digit phone number only
 patternPhno = Regex.regex "[+][0-9]{12}" 
+--pattern to match any tags to accept valid courses
+patternTags = Regex.regex "[A-Za-z0-9_, ]+" 
+--pattern to match any Email address to accept valid email only
+patternEmail = Regex.regex "[A-Za-z0-9_]+@[A-Za-z0-9-]+[.][A-Za-z0-9-]+"
 
-patternTags = Regex.regex "[a-zA-Z0-9_, ]+" 
-
-patternEmail = Regex.regex "[a-zA-Z0-9_]+@[a-zA-Z0-9-]+[.][a-zA-Z0-9-]+"
-
---validate user input based on regex matching
+--validate user input entered based on regular expression matching
 validateUser : Model -> Bool
 validateUser model = 
     if Regex.contains patternName model.username &&
@@ -85,19 +77,7 @@ validateUser model =
 -- Messages 
 
 
-type Msg = SetUsername String
-            | SetPassword String
-            | RegisterUserPage
-            | ClickLogIn
-            | LogOut
-            | ClickUser String
-            | Home
-            | LogInUserPage
-            | ClickRegister
-            | SetPhNo String
-            | SetTags String
-            | SetEmail String
-            | SetRole String
+type Msg = Getuser String | RegisterUserPage | ClickLogIn | LogOut| ClickUser String| Home| LogInUserPage| ClickRegister| SetPhNo String| SetTags String| SetEmail String| SetRole String| Getpasskey String
 
 
 -- Update
@@ -106,10 +86,10 @@ type Msg = SetUsername String
 update : Msg -> Model -> Model
 update msg model =
     case msg of
-        SetUsername username ->
+        Getuser username ->
             { model | username = username }
 
-        SetPassword password ->
+        Getpasskey password ->
             { model | password = password }
 
         RegisterUserPage ->
@@ -134,7 +114,7 @@ update msg model =
             then { model | errorMsg = "Username taken.", screen = "0" }
             else if validateUser model
             then { model | errorMsg = "", screen = "2" }
-            else { model | errorMsg = "Enter all details correctly.", screen = "0" }
+            else { model | errorMsg = "Please input valid information", screen = "0" }
 
         LogInUserPage ->
             { model | screen = "1" }
@@ -167,17 +147,17 @@ type Screens = One | Two | Three
 view : Model -> Html Msg
 view model = 
     case model.screen of
-        "0" -> signUpPage model
-        "1" -> loginPage model
-        "2" -> secondPage model
-        "3" -> thirdPage model
+        "0" -> signinScreen model
+        "1" -> loginScreen model
+        "2" -> scanareaScreen model
+        "3" -> contactScreen model
         _ -> Debug.crash "Help"
 
 
 
 
-loginPage : Model -> Html Msg
-loginPage model = 
+loginScreen : Model -> Html Msg
+loginScreen model = 
     let
         showError : String
         showError =
@@ -196,31 +176,31 @@ loginPage model =
               ,div [ class "text-left" ]
                     [ -- Login/Register form or user greeting
                     div [ id "form" ]
-                    [ h2 [ class "text-center" ] [ text "Log In" ]
-                    , p [ class "text-center help-block" ] [ text "Please Log In." ]
+                    [ h2 [ class "text-center" ] [ text "Please Login or Signup to continue" ]
                     , div [ class showError ]
-                        [ div [ class "alert alert-danger" ] [ text model.errorMsg ]
+                        [ div [ class "alert alert-danger text-center" ] [ text model.errorMsg ]
                         ]
                     , div [ class "form-group row" ]
                     [ div [ class "col-md-offset-2 col-md-8" ]
                     [ label [ for "username" ] [ text "Username:" ]
-                    , input [ id "username", type_ "text", class "form-control", onInput SetUsername ] []
+                    , input [ id "username", type_ "text", class "form-control", onInput Getuser ] []
                     ]
                     ]
                     , div [ class "form-group row" ]
                     [ div [ class "col-md-offset-2 col-md-8" ]
                     [ label [ for "password" ] [ text "Password:" ]
-                    , input [ id "password", type_ "password", class "form-control", onInput SetPassword ] []
+                    , input [ id "password", type_ "password", class "form-control", onInput Getpasskey ] []
                     ]
                     ]
+                ,hr [] []
                 , div [ class "row text-center" ] [
-                    button [ class "btn btn-success col-xs-5 col-xs-offset-3", onClick ClickLogIn ] [ text "Go" ]
+                    button [ class "btn btn-success col-xs-5 col-xs-offset-3", onClick ClickLogIn ] [ text "Next" ]
                     ]
                     
                     ]]]
 
-signUpPage : Model -> Html Msg
-signUpPage model = 
+signinScreen : Model -> Html Msg
+signinScreen model = 
     let
         showError : String
         showError =
@@ -240,20 +220,20 @@ signUpPage model =
                     [ -- Login/Register form or user greeting
                     div [ id "form" ]
                     [ h2 [ class "text-center" ] [ text "Sign Up" ]
-                    , p [ class "text-center help-block" ] [ text "Please Log In." ]
+                    , p [ class "text-center help-block" ] [ text "to scan for Teacher or Student" ]
                     , div [ class showError ]
-                        [ div [ class "alert alert-danger" ] [ text model.errorMsg ]
+                        [ div [ class "alert alert-danger text-center" ] [ text model.errorMsg ]
                         ]
                     , div [ class "form-group row" ]
                     [ div [ class "col-md-offset-2 col-md-8" ]
                     [ label [ for "username" ] [ text "Username:" ]
-                    , input [ id "username", type_ "text", class "form-control", Html.Attributes.value model.username, onInput SetUsername ] []
+                    , input [ id "username", type_ "text", class "form-control", Html.Attributes.value model.username, onInput Getuser ] []
                     ]
                     ]
                     , div [ class "form-group row" ]
                     [ div [ class "col-md-offset-2 col-md-8" ]
                     [ label [ for "password" ] [ text "Password:" ]
-                    , input [ id "password", type_ "password", class "form-control", Html.Attributes.value model.password, onInput SetPassword ] []
+                    , input [ id "password", type_ "password", class "form-control", Html.Attributes.value model.password, onInput Getpasskey ] []
                     ]
                     ]
                     , div [ class "form-group row" ]
@@ -273,8 +253,8 @@ signUpPage model =
                     [ label [ for "role" ] [ text "Role:   " ]
                     , input [ id "role", type_ "radio", class "", name "role", Html.Attributes.value "Teacher", checked True] []
                     , text " Teacher  "
-                    , input [ id "role", type_ "radio", class "", name "role", Html.Attributes.value "Seeker" ] []
-                    , text " Seeker  "
+                    , input [ id "role", type_ "radio", class "", name "role", Html.Attributes.value "Student" ] []
+                    , text " Student  "
                     ]
                     ]
                     , div [ class "form-group row" ]
@@ -283,8 +263,9 @@ signUpPage model =
                     , input [ id "tags", type_ "text", class "form-control", Html.Attributes.value model.tags, onInput SetTags ] []
                     ]
                     ]
+                    ,hr [] []
                     , div [ class "row text-center" ] [
-                    button [ class "btn btn-success col-xs-5 col-xs-offset-3", onClick ClickRegister ] [ text "Go" ]
+                    button [ class "btn btn-warning col-xs-5 col-xs-offset-3", onClick ClickRegister ] [ text "Next" ]
                     ]
                     ]]]
 
@@ -293,8 +274,8 @@ mapWrapper =
     Html.node "map-wrapper"
 
 
-secondPage : Model -> Html Msg
-secondPage model = 
+scanareaScreen : Model -> Html Msg
+scanareaScreen model = 
     let 
         loggedUser = model.username
     in
@@ -303,15 +284,16 @@ secondPage model =
         , div [ class "row"] [ navbar model.username ]
         
             , div [ class "row  col-xs-12 col-md-12" ]
-                [ div [ class "col-xs-6 col-md-6"] 
-                    [ div [class "list-group", style [("max-width", "400px")]] 
+                [ div [ class "col-xs-6 col-md-6 col-md-offset-4"] 
+                    [ div  [class "col-xs-5 col-md-5"] [ h5 [] [ text "Select user to Request Meetup" ] ]
+                     , div [class "list-group", style [("max-width", "400px")]] 
                         [ a [class "list-group-item list-group-item-action list-group-item-success align-items-start", onClick (ClickUser "Vinay")] 
                             [ span [class "badge"] [h4 [] [ text "Teacher"]]
                             , h4 [] [ text "Vinay " ]
                             , p [] [ text "Courses : Java, C, C++"]
                             ]
                         , a [class "list-group-item list-group-item-action list-group-item-info align-items-start", onClick (ClickUser "Jeorge") ] 
-                            [ span [class "badge"] [h4 [] [ text "Seeker"]]
+                            [ span [class "badge"] [h4 [] [ text "Student"]]
                             , h4 [] [ text "Jeorge" ]
                             , p [] [ text "Courses : Java"]
                             ]
@@ -325,8 +307,13 @@ secondPage model =
                             , h4 [] [ text "Javed " ]
                             , p [] [ text "Courses : Python"]
                             ]
-                        ]
-                    , div  [class "col-xs-5 col-md-5"] [ h5 [] [ text "This is a random text" ] ]
+                        ,a [class "list-group-item list-group-item-action list-group-item-info align-items-start", onClick (ClickUser "john") ] 
+                            [ span [class "badge"] [h4 [] [ text "Student"]]
+                            , h4 [] [ text "john" ]
+                            , p [] [ text "Courses : Java"]
+                            ]
+                    
+                    ]
                 ]
                 , div [ class "col-xs-12 col-md-12"] 
                     [  mapWrapper
@@ -338,6 +325,7 @@ secondPage model =
                     --p [] [text "Hello world"] 
                     ]
             ]
+           ,hr [] [] 
          ,div [class "text-center"][button [ class "btn btn-danger text-center col-md-offset-2 col-md-5", onClick LogOut ] [ text "Logout" ]]
         ]
 
@@ -345,8 +333,8 @@ secondPage model =
 --onChange msg = 
 --    msg
 
-thirdPage : Model -> Html Msg
-thirdPage model = 
+contactScreen : Model -> Html Msg
+contactScreen model = 
     let 
         member = 
             getUser userList model.checkout
@@ -356,8 +344,8 @@ thirdPage model =
             then ""
             else "hidden"
 
-        showseeker = 
-            if member.role == "seeker"
+        showstudent = 
+            if member.role == "student"
             then ""
             else "hidden"
     in
@@ -366,13 +354,13 @@ thirdPage model =
         , div [ class "row"] [ navbar model.username ]
         , div [ class "row"]
             [ h2 [ class ""] [ text model.checkout ] 
-            , div [ class "jumbotron row" ]
+            , div [ class " jumbotronTransp jumbotron  row" ]
                 [ div [class "col-md-6"] 
                     [ div [ class "text-left" ] 
                         [   table [ style [("cell-padding", "10px")]] 
                                 [   tr [] 
                                         [ td [class showteacher] [ h4 [] [text "Teaches : " ]]
-                                        , td [class showseeker] [ h4 [] [text "Interested In : "]]
+                                        , td [class showstudent] [ h4 [] [text "Interested In : "]]
                                         , td [] [ h5 [] [text member.tags] ]
                                         ]
                                 ,   tr []
@@ -395,6 +383,7 @@ thirdPage model =
                     []
                 ]
             ]
+            ,hr [] []
              ,button [ class "btn btn-danger text-center col-md-offset-2 col-md-5", onClick LogOut ] [ text "Logout" ]
         ] 
 
@@ -419,8 +408,21 @@ navbar name =
 header : Html Msg
 header = 
     div [ class "row text-center" ] 
-        [ div [ class "jumbotron" ] [ h1 [] [ text "Venture City Hackathon" ] ]
+        [ div [ class "jumbotronTransp jumbotron" ] [ h1 [] [ text "Venture City Hackathon" ] ]
+        ,hr [] []
         ]
+
+
+-- Array of users
+vinay_data_model = Model "vinay" "1234" "vinay@gmail.com" "+917035559810" "teacher" "java, c, c++" "" "1" ""
+chuck_data_model = Model "chuck" "itschuck" "chuck@gmail.com" "+919880606293" "student" "java" "" "1" ""
+robb_data_model = Model "robb" "itsrobb" "robb@gmail.com" "+918788882325" "teacher" "javascript, html" "" "1" ""
+praveen_data_model = Model "praveen" "itspraveen" "praveen122@gmail.com" "+918892585434" "teacher" "python" "" "1" ""
+john_data_model = Model "john" "itsjohn" "john55@gmail.com" "+918892585434" "teacher" "python" "" "1" ""
+sachin_data_model = Model "sachin" "itssachin" "sachin48@gmail.com" "+918892585434" "student" "python" "" "1" ""
+
+userList = [vinay_data_model, chuck_data_model, robb_data_model, praveen_data_model,john_data_model, sachin_data_model ]
+
 
 
 main : Program Never Model Msg

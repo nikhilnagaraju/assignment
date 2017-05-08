@@ -8410,7 +8410,7 @@ var _user$project$App$header = A2(
 			_elm_lang$html$Html$div,
 			{
 				ctor: '::',
-				_0: _elm_lang$html$Html_Attributes$class('jumbotron'),
+				_0: _elm_lang$html$Html_Attributes$class('jumbotronTransp jumbotron'),
 				_1: {ctor: '[]'}
 			},
 			{
@@ -8425,13 +8425,20 @@ var _user$project$App$header = A2(
 					}),
 				_1: {ctor: '[]'}
 			}),
-		_1: {ctor: '[]'}
+		_1: {
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$hr,
+				{ctor: '[]'},
+				{ctor: '[]'}),
+			_1: {ctor: '[]'}
+		}
 	});
 var _user$project$App$mapWrapper = _elm_lang$html$Html$node('map-wrapper');
-var _user$project$App$patternEmail = _elm_lang$core$Regex$regex('[a-zA-Z0-9_]+@[a-zA-Z0-9-]+[.][a-zA-Z0-9-]+');
-var _user$project$App$patternTags = _elm_lang$core$Regex$regex('[a-zA-Z0-9_, ]+');
+var _user$project$App$patternEmail = _elm_lang$core$Regex$regex('[A-Za-z0-9_]+@[A-Za-z0-9-]+[.][A-Za-z0-9-]+');
+var _user$project$App$patternTags = _elm_lang$core$Regex$regex('[A-Za-z0-9_, ]+');
 var _user$project$App$patternPhno = _elm_lang$core$Regex$regex('[+][0-9]{12}');
-var _user$project$App$patternName = _elm_lang$core$Regex$regex('[a-zA-Z_ ]+');
+var _user$project$App$patternName = _elm_lang$core$Regex$regex('[A-Za-z_ ]+');
 var _user$project$App$validateUser = function (model) {
 	return (A2(_elm_lang$core$Regex$contains, _user$project$App$patternName, model.username) && (A2(_elm_lang$core$Regex$contains, _user$project$App$patternPhno, model.phno) && (A2(_elm_lang$core$Regex$contains, _user$project$App$patternTags, model.tags) && A2(_elm_lang$core$Regex$contains, _user$project$App$patternEmail, model.email)))) ? true : false;
 };
@@ -8463,27 +8470,6 @@ var _user$project$App$Model = F9(
 		return {username: a, password: b, email: c, phno: d, role: e, tags: f, errorMsg: g, screen: h, checkout: i};
 	});
 var _user$project$App$init = A9(_user$project$App$Model, '', '', '', '', '', '', '', '1', '');
-var _user$project$App$vinay_data_model = A9(_user$project$App$Model, 'vinay', '1234', 'vinay@gmail.com', '+91789654123', 'teacher', 'java, c, c++', '', '1', '');
-var _user$project$App$user2 = A9(_user$project$App$Model, 'Jeorge', '1234', 'jeorge@gmail.com', '+91789654123', 'seeker', 'java', '', '1', '');
-var _user$project$App$user3 = A9(_user$project$App$Model, 'Hussain', '1234', 'hussain@gmail.com', '+91789654123', 'teacher', 'javascript, html', '', '1', '');
-var _user$project$App$user4 = A9(_user$project$App$Model, 'Javed', '1234', 'javed@gmail.com', '+918892585434', 'teacher', 'python', '', '1', '');
-var _user$project$App$userList = {
-	ctor: '::',
-	_0: _user$project$App$vinay_data_model,
-	_1: {
-		ctor: '::',
-		_0: _user$project$App$user2,
-		_1: {
-			ctor: '::',
-			_0: _user$project$App$user3,
-			_1: {
-				ctor: '::',
-				_0: _user$project$App$user4,
-				_1: {ctor: '[]'}
-			}
-		}
-	}
-};
 var _user$project$App$getUser = F2(
 	function (models, name) {
 		getUser:
@@ -8505,15 +8491,46 @@ var _user$project$App$getUser = F2(
 			}
 		}
 	});
+var _user$project$App$vinay_data_model = A9(_user$project$App$Model, 'vinay', '1234', 'vinay@gmail.com', '+917035559810', 'teacher', 'java, c, c++', '', '1', '');
+var _user$project$App$chuck_data_model = A9(_user$project$App$Model, 'chuck', 'itschuck', 'chuck@gmail.com', '+919880606293', 'student', 'java', '', '1', '');
+var _user$project$App$robb_data_model = A9(_user$project$App$Model, 'robb', 'itsrobb', 'robb@gmail.com', '+918788882325', 'teacher', 'javascript, html', '', '1', '');
+var _user$project$App$praveen_data_model = A9(_user$project$App$Model, 'praveen', 'itspraveen', 'praveen122@gmail.com', '+918892585434', 'teacher', 'python', '', '1', '');
+var _user$project$App$john_data_model = A9(_user$project$App$Model, 'john', 'itsjohn', 'john55@gmail.com', '+918892585434', 'teacher', 'python', '', '1', '');
+var _user$project$App$sachin_data_model = A9(_user$project$App$Model, 'sachin', 'itssachin', 'sachin48@gmail.com', '+918892585434', 'student', 'python', '', '1', '');
+var _user$project$App$userList = {
+	ctor: '::',
+	_0: _user$project$App$vinay_data_model,
+	_1: {
+		ctor: '::',
+		_0: _user$project$App$chuck_data_model,
+		_1: {
+			ctor: '::',
+			_0: _user$project$App$robb_data_model,
+			_1: {
+				ctor: '::',
+				_0: _user$project$App$praveen_data_model,
+				_1: {
+					ctor: '::',
+					_0: _user$project$App$john_data_model,
+					_1: {
+						ctor: '::',
+						_0: _user$project$App$sachin_data_model,
+						_1: {ctor: '[]'}
+					}
+				}
+			}
+		}
+	}
+};
 var _user$project$App$update = F2(
 	function (msg, model) {
 		var _p4 = msg;
 		switch (_p4.ctor) {
-			case 'SetUsername':
+			case 'Getuser':
 				return _elm_lang$core$Native_Utils.update(
 					model,
 					{username: _p4._0});
-			case 'SetPassword':
+			case 'Getpasskey':
 				return _elm_lang$core$Native_Utils.update(
 					model,
 					{password: _p4._0});
@@ -8549,7 +8566,7 @@ var _user$project$App$update = F2(
 					model,
 					{errorMsg: '', screen: '2'}) : _elm_lang$core$Native_Utils.update(
 					model,
-					{errorMsg: 'Enter all details correctly.', screen: '0'}));
+					{errorMsg: 'Please input valid information', screen: '0'}));
 			case 'LogInUserPage':
 				return _elm_lang$core$Native_Utils.update(
 					model,
@@ -8572,6 +8589,9 @@ var _user$project$App$update = F2(
 					{role: _p4._0});
 		}
 	});
+var _user$project$App$Getpasskey = function (a) {
+	return {ctor: 'Getpasskey', _0: a};
+};
 var _user$project$App$SetRole = function (a) {
 	return {ctor: 'SetRole', _0: a};
 };
@@ -8672,7 +8692,7 @@ var _user$project$App$ClickUser = function (a) {
 	return {ctor: 'ClickUser', _0: a};
 };
 var _user$project$App$LogOut = {ctor: 'LogOut'};
-var _user$project$App$secondPage = function (model) {
+var _user$project$App$scanareaScreen = function (model) {
 	var loggedUser = model.username;
 	return A2(
 		_elm_lang$html$Html$div,
@@ -8713,7 +8733,7 @@ var _user$project$App$secondPage = function (model) {
 								_elm_lang$html$Html$div,
 								{
 									ctor: '::',
-									_0: _elm_lang$html$Html_Attributes$class('col-xs-6 col-md-6'),
+									_0: _elm_lang$html$Html_Attributes$class('col-xs-6 col-md-6 col-md-offset-4'),
 									_1: {ctor: '[]'}
 								},
 								{
@@ -8722,88 +8742,50 @@ var _user$project$App$secondPage = function (model) {
 										_elm_lang$html$Html$div,
 										{
 											ctor: '::',
-											_0: _elm_lang$html$Html_Attributes$class('list-group'),
-											_1: {
-												ctor: '::',
-												_0: _elm_lang$html$Html_Attributes$style(
-													{
-														ctor: '::',
-														_0: {ctor: '_Tuple2', _0: 'max-width', _1: '400px'},
-														_1: {ctor: '[]'}
-													}),
-												_1: {ctor: '[]'}
-											}
+											_0: _elm_lang$html$Html_Attributes$class('col-xs-5 col-md-5'),
+											_1: {ctor: '[]'}
 										},
 										{
 											ctor: '::',
 											_0: A2(
-												_elm_lang$html$Html$a,
+												_elm_lang$html$Html$h5,
+												{ctor: '[]'},
 												{
 													ctor: '::',
-													_0: _elm_lang$html$Html_Attributes$class('list-group-item list-group-item-action list-group-item-success align-items-start'),
-													_1: {
-														ctor: '::',
-														_0: _elm_lang$html$Html_Events$onClick(
-															_user$project$App$ClickUser('Vinay')),
-														_1: {ctor: '[]'}
-													}
-												},
-												{
+													_0: _elm_lang$html$Html$text('Select user to Request Meetup'),
+													_1: {ctor: '[]'}
+												}),
+											_1: {ctor: '[]'}
+										}),
+									_1: {
+										ctor: '::',
+										_0: A2(
+											_elm_lang$html$Html$div,
+											{
+												ctor: '::',
+												_0: _elm_lang$html$Html_Attributes$class('list-group'),
+												_1: {
 													ctor: '::',
-													_0: A2(
-														_elm_lang$html$Html$span,
+													_0: _elm_lang$html$Html_Attributes$style(
 														{
 															ctor: '::',
-															_0: _elm_lang$html$Html_Attributes$class('badge'),
-															_1: {ctor: '[]'}
-														},
-														{
-															ctor: '::',
-															_0: A2(
-																_elm_lang$html$Html$h4,
-																{ctor: '[]'},
-																{
-																	ctor: '::',
-																	_0: _elm_lang$html$Html$text('Teacher'),
-																	_1: {ctor: '[]'}
-																}),
+															_0: {ctor: '_Tuple2', _0: 'max-width', _1: '400px'},
 															_1: {ctor: '[]'}
 														}),
-													_1: {
-														ctor: '::',
-														_0: A2(
-															_elm_lang$html$Html$h4,
-															{ctor: '[]'},
-															{
-																ctor: '::',
-																_0: _elm_lang$html$Html$text('Vinay '),
-																_1: {ctor: '[]'}
-															}),
-														_1: {
-															ctor: '::',
-															_0: A2(
-																_elm_lang$html$Html$p,
-																{ctor: '[]'},
-																{
-																	ctor: '::',
-																	_0: _elm_lang$html$Html$text('Courses : Java, C, C++'),
-																	_1: {ctor: '[]'}
-																}),
-															_1: {ctor: '[]'}
-														}
-													}
-												}),
-											_1: {
+													_1: {ctor: '[]'}
+												}
+											},
+											{
 												ctor: '::',
 												_0: A2(
 													_elm_lang$html$Html$a,
 													{
 														ctor: '::',
-														_0: _elm_lang$html$Html_Attributes$class('list-group-item list-group-item-action list-group-item-info align-items-start'),
+														_0: _elm_lang$html$Html_Attributes$class('list-group-item list-group-item-action list-group-item-success align-items-start'),
 														_1: {
 															ctor: '::',
 															_0: _elm_lang$html$Html_Events$onClick(
-																_user$project$App$ClickUser('Jeorge')),
+																_user$project$App$ClickUser('Vinay')),
 															_1: {ctor: '[]'}
 														}
 													},
@@ -8823,7 +8805,7 @@ var _user$project$App$secondPage = function (model) {
 																	{ctor: '[]'},
 																	{
 																		ctor: '::',
-																		_0: _elm_lang$html$Html$text('Seeker'),
+																		_0: _elm_lang$html$Html$text('Teacher'),
 																		_1: {ctor: '[]'}
 																	}),
 																_1: {ctor: '[]'}
@@ -8835,7 +8817,7 @@ var _user$project$App$secondPage = function (model) {
 																{ctor: '[]'},
 																{
 																	ctor: '::',
-																	_0: _elm_lang$html$Html$text('Jeorge'),
+																	_0: _elm_lang$html$Html$text('Vinay '),
 																	_1: {ctor: '[]'}
 																}),
 															_1: {
@@ -8845,7 +8827,7 @@ var _user$project$App$secondPage = function (model) {
 																	{ctor: '[]'},
 																	{
 																		ctor: '::',
-																		_0: _elm_lang$html$Html$text('Courses : Java'),
+																		_0: _elm_lang$html$Html$text('Courses : Java, C, C++'),
 																		_1: {ctor: '[]'}
 																	}),
 																_1: {ctor: '[]'}
@@ -8858,11 +8840,11 @@ var _user$project$App$secondPage = function (model) {
 														_elm_lang$html$Html$a,
 														{
 															ctor: '::',
-															_0: _elm_lang$html$Html_Attributes$class('list-group-item list-group-item-action list-group-item-success align-items-start'),
+															_0: _elm_lang$html$Html_Attributes$class('list-group-item list-group-item-action list-group-item-info align-items-start'),
 															_1: {
 																ctor: '::',
 																_0: _elm_lang$html$Html_Events$onClick(
-																	_user$project$App$ClickUser('Hussain')),
+																	_user$project$App$ClickUser('Jeorge')),
 																_1: {ctor: '[]'}
 															}
 														},
@@ -8882,7 +8864,7 @@ var _user$project$App$secondPage = function (model) {
 																		{ctor: '[]'},
 																		{
 																			ctor: '::',
-																			_0: _elm_lang$html$Html$text('Teacher'),
+																			_0: _elm_lang$html$Html$text('Student'),
 																			_1: {ctor: '[]'}
 																		}),
 																	_1: {ctor: '[]'}
@@ -8894,7 +8876,7 @@ var _user$project$App$secondPage = function (model) {
 																	{ctor: '[]'},
 																	{
 																		ctor: '::',
-																		_0: _elm_lang$html$Html$text('Hussain '),
+																		_0: _elm_lang$html$Html$text('Jeorge'),
 																		_1: {ctor: '[]'}
 																	}),
 																_1: {
@@ -8904,7 +8886,7 @@ var _user$project$App$secondPage = function (model) {
 																		{ctor: '[]'},
 																		{
 																			ctor: '::',
-																			_0: _elm_lang$html$Html$text('Interested in : Java'),
+																			_0: _elm_lang$html$Html$text('Courses : Java'),
 																			_1: {ctor: '[]'}
 																		}),
 																	_1: {ctor: '[]'}
@@ -8917,11 +8899,11 @@ var _user$project$App$secondPage = function (model) {
 															_elm_lang$html$Html$a,
 															{
 																ctor: '::',
-																_0: _elm_lang$html$Html_Attributes$class('list-group-item list-group-item-action list-group-item-info align-items-start'),
+																_0: _elm_lang$html$Html_Attributes$class('list-group-item list-group-item-action list-group-item-success align-items-start'),
 																_1: {
 																	ctor: '::',
 																	_0: _elm_lang$html$Html_Events$onClick(
-																		_user$project$App$ClickUser('Javed')),
+																		_user$project$App$ClickUser('Hussain')),
 																	_1: {ctor: '[]'}
 																}
 															},
@@ -8953,7 +8935,7 @@ var _user$project$App$secondPage = function (model) {
 																		{ctor: '[]'},
 																		{
 																			ctor: '::',
-																			_0: _elm_lang$html$Html$text('Javed '),
+																			_0: _elm_lang$html$Html$text('Hussain '),
 																			_1: {ctor: '[]'}
 																		}),
 																	_1: {
@@ -8963,38 +8945,136 @@ var _user$project$App$secondPage = function (model) {
 																			{ctor: '[]'},
 																			{
 																				ctor: '::',
-																				_0: _elm_lang$html$Html$text('Courses : Python'),
+																				_0: _elm_lang$html$Html$text('Interested in : Java'),
 																				_1: {ctor: '[]'}
 																			}),
 																		_1: {ctor: '[]'}
 																	}
 																}
 															}),
-														_1: {ctor: '[]'}
+														_1: {
+															ctor: '::',
+															_0: A2(
+																_elm_lang$html$Html$a,
+																{
+																	ctor: '::',
+																	_0: _elm_lang$html$Html_Attributes$class('list-group-item list-group-item-action list-group-item-info align-items-start'),
+																	_1: {
+																		ctor: '::',
+																		_0: _elm_lang$html$Html_Events$onClick(
+																			_user$project$App$ClickUser('Javed')),
+																		_1: {ctor: '[]'}
+																	}
+																},
+																{
+																	ctor: '::',
+																	_0: A2(
+																		_elm_lang$html$Html$span,
+																		{
+																			ctor: '::',
+																			_0: _elm_lang$html$Html_Attributes$class('badge'),
+																			_1: {ctor: '[]'}
+																		},
+																		{
+																			ctor: '::',
+																			_0: A2(
+																				_elm_lang$html$Html$h4,
+																				{ctor: '[]'},
+																				{
+																					ctor: '::',
+																					_0: _elm_lang$html$Html$text('Teacher'),
+																					_1: {ctor: '[]'}
+																				}),
+																			_1: {ctor: '[]'}
+																		}),
+																	_1: {
+																		ctor: '::',
+																		_0: A2(
+																			_elm_lang$html$Html$h4,
+																			{ctor: '[]'},
+																			{
+																				ctor: '::',
+																				_0: _elm_lang$html$Html$text('Javed '),
+																				_1: {ctor: '[]'}
+																			}),
+																		_1: {
+																			ctor: '::',
+																			_0: A2(
+																				_elm_lang$html$Html$p,
+																				{ctor: '[]'},
+																				{
+																					ctor: '::',
+																					_0: _elm_lang$html$Html$text('Courses : Python'),
+																					_1: {ctor: '[]'}
+																				}),
+																			_1: {ctor: '[]'}
+																		}
+																	}
+																}),
+															_1: {
+																ctor: '::',
+																_0: A2(
+																	_elm_lang$html$Html$a,
+																	{
+																		ctor: '::',
+																		_0: _elm_lang$html$Html_Attributes$class('list-group-item list-group-item-action list-group-item-info align-items-start'),
+																		_1: {
+																			ctor: '::',
+																			_0: _elm_lang$html$Html_Events$onClick(
+																				_user$project$App$ClickUser('john')),
+																			_1: {ctor: '[]'}
+																		}
+																	},
+																	{
+																		ctor: '::',
+																		_0: A2(
+																			_elm_lang$html$Html$span,
+																			{
+																				ctor: '::',
+																				_0: _elm_lang$html$Html_Attributes$class('badge'),
+																				_1: {ctor: '[]'}
+																			},
+																			{
+																				ctor: '::',
+																				_0: A2(
+																					_elm_lang$html$Html$h4,
+																					{ctor: '[]'},
+																					{
+																						ctor: '::',
+																						_0: _elm_lang$html$Html$text('Student'),
+																						_1: {ctor: '[]'}
+																					}),
+																				_1: {ctor: '[]'}
+																			}),
+																		_1: {
+																			ctor: '::',
+																			_0: A2(
+																				_elm_lang$html$Html$h4,
+																				{ctor: '[]'},
+																				{
+																					ctor: '::',
+																					_0: _elm_lang$html$Html$text('john'),
+																					_1: {ctor: '[]'}
+																				}),
+																			_1: {
+																				ctor: '::',
+																				_0: A2(
+																					_elm_lang$html$Html$p,
+																					{ctor: '[]'},
+																					{
+																						ctor: '::',
+																						_0: _elm_lang$html$Html$text('Courses : Java'),
+																						_1: {ctor: '[]'}
+																					}),
+																				_1: {ctor: '[]'}
+																			}
+																		}
+																	}),
+																_1: {ctor: '[]'}
+															}
+														}
 													}
 												}
-											}
-										}),
-									_1: {
-										ctor: '::',
-										_0: A2(
-											_elm_lang$html$Html$div,
-											{
-												ctor: '::',
-												_0: _elm_lang$html$Html_Attributes$class('col-xs-5 col-md-5'),
-												_1: {ctor: '[]'}
-											},
-											{
-												ctor: '::',
-												_0: A2(
-													_elm_lang$html$Html$h5,
-													{ctor: '[]'},
-													{
-														ctor: '::',
-														_0: _elm_lang$html$Html$text('This is a random text'),
-														_1: {ctor: '[]'}
-													}),
-												_1: {ctor: '[]'}
 											}),
 										_1: {ctor: '[]'}
 									}
@@ -9030,42 +9110,49 @@ var _user$project$App$secondPage = function (model) {
 					_1: {
 						ctor: '::',
 						_0: A2(
-							_elm_lang$html$Html$div,
-							{
-								ctor: '::',
-								_0: _elm_lang$html$Html_Attributes$class('text-center'),
-								_1: {ctor: '[]'}
-							},
-							{
-								ctor: '::',
-								_0: A2(
-									_elm_lang$html$Html$button,
-									{
-										ctor: '::',
-										_0: _elm_lang$html$Html_Attributes$class('btn btn-danger text-center col-md-offset-2 col-md-5'),
-										_1: {
+							_elm_lang$html$Html$hr,
+							{ctor: '[]'},
+							{ctor: '[]'}),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$div,
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html_Attributes$class('text-center'),
+									_1: {ctor: '[]'}
+								},
+								{
+									ctor: '::',
+									_0: A2(
+										_elm_lang$html$Html$button,
+										{
 											ctor: '::',
-											_0: _elm_lang$html$Html_Events$onClick(_user$project$App$LogOut),
+											_0: _elm_lang$html$Html_Attributes$class('btn btn-danger text-center col-md-offset-2 col-md-5'),
+											_1: {
+												ctor: '::',
+												_0: _elm_lang$html$Html_Events$onClick(_user$project$App$LogOut),
+												_1: {ctor: '[]'}
+											}
+										},
+										{
+											ctor: '::',
+											_0: _elm_lang$html$Html$text('Logout'),
 											_1: {ctor: '[]'}
-										}
-									},
-									{
-										ctor: '::',
-										_0: _elm_lang$html$Html$text('Logout'),
-										_1: {ctor: '[]'}
-									}),
-								_1: {ctor: '[]'}
-							}),
-						_1: {ctor: '[]'}
+										}),
+									_1: {ctor: '[]'}
+								}),
+							_1: {ctor: '[]'}
+						}
 					}
 				}
 			}
 		});
 };
-var _user$project$App$thirdPage = function (model) {
+var _user$project$App$contactScreen = function (model) {
 	var member = A2(_user$project$App$getUser, _user$project$App$userList, model.checkout);
 	var showteacher = _elm_lang$core$Native_Utils.eq(member.role, 'teacher') ? '' : 'hidden';
-	var showseeker = _elm_lang$core$Native_Utils.eq(member.role, 'seeker') ? '' : 'hidden';
+	var showstudent = _elm_lang$core$Native_Utils.eq(member.role, 'student') ? '' : 'hidden';
 	return A2(
 		_elm_lang$html$Html$div,
 		{
@@ -9119,7 +9206,7 @@ var _user$project$App$thirdPage = function (model) {
 									_elm_lang$html$Html$div,
 									{
 										ctor: '::',
-										_0: _elm_lang$html$Html_Attributes$class('jumbotron row'),
+										_0: _elm_lang$html$Html_Attributes$class(' jumbotronTransp jumbotron  row'),
 										_1: {ctor: '[]'}
 									},
 									{
@@ -9186,7 +9273,7 @@ var _user$project$App$thirdPage = function (model) {
 																				_elm_lang$html$Html$td,
 																				{
 																					ctor: '::',
-																					_0: _elm_lang$html$Html_Attributes$class(showseeker),
+																					_0: _elm_lang$html$Html_Attributes$class(showstudent),
 																					_1: {ctor: '[]'}
 																				},
 																				{
@@ -9376,22 +9463,29 @@ var _user$project$App$thirdPage = function (model) {
 					_1: {
 						ctor: '::',
 						_0: A2(
-							_elm_lang$html$Html$button,
-							{
-								ctor: '::',
-								_0: _elm_lang$html$Html_Attributes$class('btn btn-danger text-center col-md-offset-2 col-md-5'),
-								_1: {
+							_elm_lang$html$Html$hr,
+							{ctor: '[]'},
+							{ctor: '[]'}),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$button,
+								{
 									ctor: '::',
-									_0: _elm_lang$html$Html_Events$onClick(_user$project$App$LogOut),
+									_0: _elm_lang$html$Html_Attributes$class('btn btn-danger text-center col-md-offset-2 col-md-5'),
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$html$Html_Events$onClick(_user$project$App$LogOut),
+										_1: {ctor: '[]'}
+									}
+								},
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html$text('Logout'),
 									_1: {ctor: '[]'}
-								}
-							},
-							{
-								ctor: '::',
-								_0: _elm_lang$html$Html$text('Logout'),
-								_1: {ctor: '[]'}
-							}),
-						_1: {ctor: '[]'}
+								}),
+							_1: {ctor: '[]'}
+						}
 					}
 				}
 			}
@@ -9399,13 +9493,10 @@ var _user$project$App$thirdPage = function (model) {
 };
 var _user$project$App$ClickLogIn = {ctor: 'ClickLogIn'};
 var _user$project$App$RegisterUserPage = {ctor: 'RegisterUserPage'};
-var _user$project$App$SetPassword = function (a) {
-	return {ctor: 'SetPassword', _0: a};
+var _user$project$App$Getuser = function (a) {
+	return {ctor: 'Getuser', _0: a};
 };
-var _user$project$App$SetUsername = function (a) {
-	return {ctor: 'SetUsername', _0: a};
-};
-var _user$project$App$loginPage = function (model) {
+var _user$project$App$loginScreen = function (model) {
 	var showError = _elm_lang$core$String$isEmpty(model.errorMsg) ? 'hidden' : '';
 	return A2(
 		_elm_lang$html$Html$div,
@@ -9509,21 +9600,32 @@ var _user$project$App$loginPage = function (model) {
 										},
 										{
 											ctor: '::',
-											_0: _elm_lang$html$Html$text('Log In'),
+											_0: _elm_lang$html$Html$text('Please Login or Signup to continue'),
 											_1: {ctor: '[]'}
 										}),
 									_1: {
 										ctor: '::',
 										_0: A2(
-											_elm_lang$html$Html$p,
+											_elm_lang$html$Html$div,
 											{
 												ctor: '::',
-												_0: _elm_lang$html$Html_Attributes$class('text-center help-block'),
+												_0: _elm_lang$html$Html_Attributes$class(showError),
 												_1: {ctor: '[]'}
 											},
 											{
 												ctor: '::',
-												_0: _elm_lang$html$Html$text('Please Log In.'),
+												_0: A2(
+													_elm_lang$html$Html$div,
+													{
+														ctor: '::',
+														_0: _elm_lang$html$Html_Attributes$class('alert alert-danger text-center'),
+														_1: {ctor: '[]'}
+													},
+													{
+														ctor: '::',
+														_0: _elm_lang$html$Html$text(model.errorMsg),
+														_1: {ctor: '[]'}
+													}),
 												_1: {ctor: '[]'}
 											}),
 										_1: {
@@ -9532,7 +9634,7 @@ var _user$project$App$loginPage = function (model) {
 												_elm_lang$html$Html$div,
 												{
 													ctor: '::',
-													_0: _elm_lang$html$Html_Attributes$class(showError),
+													_0: _elm_lang$html$Html_Attributes$class('form-group row'),
 													_1: {ctor: '[]'}
 												},
 												{
@@ -9541,13 +9643,47 @@ var _user$project$App$loginPage = function (model) {
 														_elm_lang$html$Html$div,
 														{
 															ctor: '::',
-															_0: _elm_lang$html$Html_Attributes$class('alert alert-danger'),
+															_0: _elm_lang$html$Html_Attributes$class('col-md-offset-2 col-md-8'),
 															_1: {ctor: '[]'}
 														},
 														{
 															ctor: '::',
-															_0: _elm_lang$html$Html$text(model.errorMsg),
-															_1: {ctor: '[]'}
+															_0: A2(
+																_elm_lang$html$Html$label,
+																{
+																	ctor: '::',
+																	_0: _elm_lang$html$Html_Attributes$for('username'),
+																	_1: {ctor: '[]'}
+																},
+																{
+																	ctor: '::',
+																	_0: _elm_lang$html$Html$text('Username:'),
+																	_1: {ctor: '[]'}
+																}),
+															_1: {
+																ctor: '::',
+																_0: A2(
+																	_elm_lang$html$Html$input,
+																	{
+																		ctor: '::',
+																		_0: _elm_lang$html$Html_Attributes$id('username'),
+																		_1: {
+																			ctor: '::',
+																			_0: _elm_lang$html$Html_Attributes$type_('text'),
+																			_1: {
+																				ctor: '::',
+																				_0: _elm_lang$html$Html_Attributes$class('form-control'),
+																				_1: {
+																					ctor: '::',
+																					_0: _elm_lang$html$Html_Events$onInput(_user$project$App$Getuser),
+																					_1: {ctor: '[]'}
+																				}
+																			}
+																		}
+																	},
+																	{ctor: '[]'}),
+																_1: {ctor: '[]'}
+															}
 														}),
 													_1: {ctor: '[]'}
 												}),
@@ -9575,12 +9711,12 @@ var _user$project$App$loginPage = function (model) {
 																	_elm_lang$html$Html$label,
 																	{
 																		ctor: '::',
-																		_0: _elm_lang$html$Html_Attributes$for('username'),
+																		_0: _elm_lang$html$Html_Attributes$for('password'),
 																		_1: {ctor: '[]'}
 																	},
 																	{
 																		ctor: '::',
-																		_0: _elm_lang$html$Html$text('Username:'),
+																		_0: _elm_lang$html$Html$text('Password:'),
 																		_1: {ctor: '[]'}
 																	}),
 																_1: {
@@ -9589,16 +9725,16 @@ var _user$project$App$loginPage = function (model) {
 																		_elm_lang$html$Html$input,
 																		{
 																			ctor: '::',
-																			_0: _elm_lang$html$Html_Attributes$id('username'),
+																			_0: _elm_lang$html$Html_Attributes$id('password'),
 																			_1: {
 																				ctor: '::',
-																				_0: _elm_lang$html$Html_Attributes$type_('text'),
+																				_0: _elm_lang$html$Html_Attributes$type_('password'),
 																				_1: {
 																					ctor: '::',
 																					_0: _elm_lang$html$Html_Attributes$class('form-control'),
 																					_1: {
 																						ctor: '::',
-																						_0: _elm_lang$html$Html_Events$onInput(_user$project$App$SetUsername),
+																						_0: _elm_lang$html$Html_Events$onInput(_user$project$App$Getpasskey),
 																						_1: {ctor: '[]'}
 																					}
 																				}
@@ -9613,62 +9749,9 @@ var _user$project$App$loginPage = function (model) {
 												_1: {
 													ctor: '::',
 													_0: A2(
-														_elm_lang$html$Html$div,
-														{
-															ctor: '::',
-															_0: _elm_lang$html$Html_Attributes$class('form-group row'),
-															_1: {ctor: '[]'}
-														},
-														{
-															ctor: '::',
-															_0: A2(
-																_elm_lang$html$Html$div,
-																{
-																	ctor: '::',
-																	_0: _elm_lang$html$Html_Attributes$class('col-md-offset-2 col-md-8'),
-																	_1: {ctor: '[]'}
-																},
-																{
-																	ctor: '::',
-																	_0: A2(
-																		_elm_lang$html$Html$label,
-																		{
-																			ctor: '::',
-																			_0: _elm_lang$html$Html_Attributes$for('password'),
-																			_1: {ctor: '[]'}
-																		},
-																		{
-																			ctor: '::',
-																			_0: _elm_lang$html$Html$text('Password:'),
-																			_1: {ctor: '[]'}
-																		}),
-																	_1: {
-																		ctor: '::',
-																		_0: A2(
-																			_elm_lang$html$Html$input,
-																			{
-																				ctor: '::',
-																				_0: _elm_lang$html$Html_Attributes$id('password'),
-																				_1: {
-																					ctor: '::',
-																					_0: _elm_lang$html$Html_Attributes$type_('password'),
-																					_1: {
-																						ctor: '::',
-																						_0: _elm_lang$html$Html_Attributes$class('form-control'),
-																						_1: {
-																							ctor: '::',
-																							_0: _elm_lang$html$Html_Events$onInput(_user$project$App$SetPassword),
-																							_1: {ctor: '[]'}
-																						}
-																					}
-																				}
-																			},
-																			{ctor: '[]'}),
-																		_1: {ctor: '[]'}
-																	}
-																}),
-															_1: {ctor: '[]'}
-														}),
+														_elm_lang$html$Html$hr,
+														{ctor: '[]'},
+														{ctor: '[]'}),
 													_1: {
 														ctor: '::',
 														_0: A2(
@@ -9693,7 +9776,7 @@ var _user$project$App$loginPage = function (model) {
 																	},
 																	{
 																		ctor: '::',
-																		_0: _elm_lang$html$Html$text('Go'),
+																		_0: _elm_lang$html$Html$text('Next'),
 																		_1: {ctor: '[]'}
 																	}),
 																_1: {ctor: '[]'}
@@ -9712,7 +9795,7 @@ var _user$project$App$loginPage = function (model) {
 			}
 		});
 };
-var _user$project$App$signUpPage = function (model) {
+var _user$project$App$signinScreen = function (model) {
 	var showError = _elm_lang$core$String$isEmpty(model.errorMsg) ? 'hidden' : '';
 	return A2(
 		_elm_lang$html$Html$div,
@@ -9830,7 +9913,7 @@ var _user$project$App$signUpPage = function (model) {
 											},
 											{
 												ctor: '::',
-												_0: _elm_lang$html$Html$text('Please Log In.'),
+												_0: _elm_lang$html$Html$text('to scan for Teacher or Student'),
 												_1: {ctor: '[]'}
 											}),
 										_1: {
@@ -9848,7 +9931,7 @@ var _user$project$App$signUpPage = function (model) {
 														_elm_lang$html$Html$div,
 														{
 															ctor: '::',
-															_0: _elm_lang$html$Html_Attributes$class('alert alert-danger'),
+															_0: _elm_lang$html$Html_Attributes$class('alert alert-danger text-center'),
 															_1: {ctor: '[]'}
 														},
 														{
@@ -9908,7 +9991,7 @@ var _user$project$App$signUpPage = function (model) {
 																						_0: _elm_lang$html$Html_Attributes$value(model.username),
 																						_1: {
 																							ctor: '::',
-																							_0: _elm_lang$html$Html_Events$onInput(_user$project$App$SetUsername),
+																							_0: _elm_lang$html$Html_Events$onInput(_user$project$App$Getuser),
 																							_1: {ctor: '[]'}
 																						}
 																					}
@@ -9971,7 +10054,7 @@ var _user$project$App$signUpPage = function (model) {
 																							_0: _elm_lang$html$Html_Attributes$value(model.password),
 																							_1: {
 																								ctor: '::',
-																								_0: _elm_lang$html$Html_Events$onInput(_user$project$App$SetPassword),
+																								_0: _elm_lang$html$Html_Events$onInput(_user$project$App$Getpasskey),
 																								_1: {ctor: '[]'}
 																							}
 																						}
@@ -10193,7 +10276,7 @@ var _user$project$App$signUpPage = function (model) {
 																												_0: _elm_lang$html$Html_Attributes$name('role'),
 																												_1: {
 																													ctor: '::',
-																													_0: _elm_lang$html$Html_Attributes$value('Seeker'),
+																													_0: _elm_lang$html$Html_Attributes$value('Student'),
 																													_1: {ctor: '[]'}
 																												}
 																											}
@@ -10203,7 +10286,7 @@ var _user$project$App$signUpPage = function (model) {
 																								{ctor: '[]'}),
 																							_1: {
 																								ctor: '::',
-																								_0: _elm_lang$html$Html$text(' Seeker  '),
+																								_0: _elm_lang$html$Html$text(' Student  '),
 																								_1: {ctor: '[]'}
 																							}
 																						}
@@ -10278,33 +10361,40 @@ var _user$project$App$signUpPage = function (model) {
 																	_1: {
 																		ctor: '::',
 																		_0: A2(
-																			_elm_lang$html$Html$div,
-																			{
-																				ctor: '::',
-																				_0: _elm_lang$html$Html_Attributes$class('row text-center'),
-																				_1: {ctor: '[]'}
-																			},
-																			{
-																				ctor: '::',
-																				_0: A2(
-																					_elm_lang$html$Html$button,
-																					{
-																						ctor: '::',
-																						_0: _elm_lang$html$Html_Attributes$class('btn btn-success col-xs-5 col-xs-offset-3'),
-																						_1: {
+																			_elm_lang$html$Html$hr,
+																			{ctor: '[]'},
+																			{ctor: '[]'}),
+																		_1: {
+																			ctor: '::',
+																			_0: A2(
+																				_elm_lang$html$Html$div,
+																				{
+																					ctor: '::',
+																					_0: _elm_lang$html$Html_Attributes$class('row text-center'),
+																					_1: {ctor: '[]'}
+																				},
+																				{
+																					ctor: '::',
+																					_0: A2(
+																						_elm_lang$html$Html$button,
+																						{
 																							ctor: '::',
-																							_0: _elm_lang$html$Html_Events$onClick(_user$project$App$ClickRegister),
+																							_0: _elm_lang$html$Html_Attributes$class('btn btn-warning col-xs-5 col-xs-offset-3'),
+																							_1: {
+																								ctor: '::',
+																								_0: _elm_lang$html$Html_Events$onClick(_user$project$App$ClickRegister),
+																								_1: {ctor: '[]'}
+																							}
+																						},
+																						{
+																							ctor: '::',
+																							_0: _elm_lang$html$Html$text('Next'),
 																							_1: {ctor: '[]'}
-																						}
-																					},
-																					{
-																						ctor: '::',
-																						_0: _elm_lang$html$Html$text('Go'),
-																						_1: {ctor: '[]'}
-																					}),
-																				_1: {ctor: '[]'}
-																			}),
-																		_1: {ctor: '[]'}
+																						}),
+																					_1: {ctor: '[]'}
+																				}),
+																			_1: {ctor: '[]'}
+																		}
 																	}
 																}
 															}
@@ -10326,19 +10416,19 @@ var _user$project$App$view = function (model) {
 	var _p5 = model.screen;
 	switch (_p5) {
 		case '0':
-			return _user$project$App$signUpPage(model);
+			return _user$project$App$signinScreen(model);
 		case '1':
-			return _user$project$App$loginPage(model);
+			return _user$project$App$loginScreen(model);
 		case '2':
-			return _user$project$App$secondPage(model);
+			return _user$project$App$scanareaScreen(model);
 		case '3':
-			return _user$project$App$thirdPage(model);
+			return _user$project$App$contactScreen(model);
 		default:
 			return _elm_lang$core$Native_Utils.crashCase(
 				'App',
 				{
-					start: {line: 169, column: 5},
-					end: {line: 174, column: 32}
+					start: {line: 149, column: 5},
+					end: {line: 154, column: 32}
 				},
 				_p5)('Help');
 	}

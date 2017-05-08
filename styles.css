@@ -18,6 +18,15 @@ blockquote {
     font-size: 14px;
 }
 
+.jumbotronTransp {
+ padding: 30px;
+ margin-bottom: 30px;
+ font-size: 21px;
+ color: white;
+ font-weight: 200;
+ background-color: #5f5f5f;
+}
+
 table {
 	max-width: 80%;
 }
@@ -29,4 +38,8 @@ th, td{
 google-map {
 	height: 400px;
 	margin: 10px;
+}
+
+body{
+background-color: #e0f2f1;
 }
