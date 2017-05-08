@@ -309,12 +309,12 @@ scanareaScreen model =
                             , p [] [ text "Courses : Python"]
                             ]
                         ,a [class "list-group-item list-group-item-action list-group-item-info align-items-start", onClick (ClickUser "john") ] 
-                            [ span [class "badge"] [h4 [] [ text "Student"]]
+                            [ span [class "badge"] [h4 [] [ text "Teacher"]]
                             , h4 [] [ text "John" ]
                             , p [] [ text "Courses : Java"]
                             ]
                         ,a [class "list-group-item list-group-item-action list-group-item-info align-items-start", onClick (ClickUser "praveen") ] 
-                            [ span [class "badge"] [h4 [] [ text "Student"]]
+                            [ span [class "badge"] [h4 [] [ text "Teacher"]]
                             , h4 [] [ text "Praveen" ]
                             , p [] [ text "Courses : Java"]
                             ]
@@ -323,8 +323,8 @@ scanareaScreen model =
                 ]
                 , div [ class "col-xs-12 col-md-12"] 
                     [  mapWrapper
-                        [ attribute "latitude" "12.942149"
-                        , attribute "longitude" "77.622002"
+                        [ attribute "latitude" "36.640101"
+                    , attribute "longitude" "-119.680449"
                         --, attribute "drag-events" "true"
                         ]
                         []
@@ -421,11 +421,11 @@ header =
 
 -- Array of users
 vinay_data_model = Model "vinay" "1234" "vinay@gmail.com" "+917035559810" "teacher" "java, c, c++" "" "1" ""
-chuck_data_model = Model "chuck" "itschuck" "chuck@gmail.com" "+919880606293" "student" "java" "" "1" ""
-robb_data_model = Model "robb" "itsrobb" "robb@gmail.com" "+918788882325" "teacher" "javascript, html" "" "1" ""
-praveen_data_model = Model "praveen" "itspraveen" "praveen122@gmail.com" "+918892585434" "teacher" "python" "" "1" ""
+chuck_data_model = Model "chuck" "itschuck" "chuck@gmail.com" "+919880606293" "student" "java, python" "" "1" ""
+robb_data_model = Model "robb" "itsrobb" "robb@gmail.com" "+918788882325" "teacher" "javascript, html, ELM" "" "1" ""
+praveen_data_model = Model "praveen" "itspraveen" "praveen122@gmail.com" "+918892585434" "teacher" "python, Jade" "" "1" ""
 john_data_model = Model "john" "itsjohn" "john55@gmail.com" "+918892585434" "teacher" "python" "" "1" ""
-sachin_data_model = Model "sachin" "itssachin" "sachin48@gmail.com" "+918892585434" "student" "python" "" "1" ""
+sachin_data_model = Model "sachin" "itssachin" "sachin48@gmail.com" "+918892585434" "student" "Machine Learning, Haskell" "" "1" ""
 
 userList = [vinay_data_model, chuck_data_model, robb_data_model, praveen_data_model,john_data_model, sachin_data_model ]
 

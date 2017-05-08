@@ -8492,11 +8492,11 @@ var _user$project$App$getUser = F2(
 		}
 	});
 var _user$project$App$vinay_data_model = A9(_user$project$App$Model, 'vinay', '1234', 'vinay@gmail.com', '+917035559810', 'teacher', 'java, c, c++', '', '1', '');
-var _user$project$App$chuck_data_model = A9(_user$project$App$Model, 'chuck', 'itschuck', 'chuck@gmail.com', '+919880606293', 'student', 'java', '', '1', '');
-var _user$project$App$robb_data_model = A9(_user$project$App$Model, 'robb', 'itsrobb', 'robb@gmail.com', '+918788882325', 'teacher', 'javascript, html', '', '1', '');
-var _user$project$App$praveen_data_model = A9(_user$project$App$Model, 'praveen', 'itspraveen', 'praveen122@gmail.com', '+918892585434', 'teacher', 'python', '', '1', '');
+var _user$project$App$chuck_data_model = A9(_user$project$App$Model, 'chuck', 'itschuck', 'chuck@gmail.com', '+919880606293', 'student', 'java, python', '', '1', '');
+var _user$project$App$robb_data_model = A9(_user$project$App$Model, 'robb', 'itsrobb', 'robb@gmail.com', '+918788882325', 'teacher', 'javascript, html, ELM', '', '1', '');
+var _user$project$App$praveen_data_model = A9(_user$project$App$Model, 'praveen', 'itspraveen', 'praveen122@gmail.com', '+918892585434', 'teacher', 'python, Jade', '', '1', '');
 var _user$project$App$john_data_model = A9(_user$project$App$Model, 'john', 'itsjohn', 'john55@gmail.com', '+918892585434', 'teacher', 'python', '', '1', '');
-var _user$project$App$sachin_data_model = A9(_user$project$App$Model, 'sachin', 'itssachin', 'sachin48@gmail.com', '+918892585434', 'student', 'python', '', '1', '');
+var _user$project$App$sachin_data_model = A9(_user$project$App$Model, 'sachin', 'itssachin', 'sachin48@gmail.com', '+918892585434', 'student', 'Machine Learning, Haskell', '', '1', '');
 var _user$project$App$userList = {
 	ctor: '::',
 	_0: _user$project$App$vinay_data_model,
@@ -9041,7 +9041,7 @@ var _user$project$App$scanareaScreen = function (model) {
 																					{ctor: '[]'},
 																					{
 																						ctor: '::',
-																						_0: _elm_lang$html$Html$text('Student'),
+																						_0: _elm_lang$html$Html$text('Teacher'),
 																						_1: {ctor: '[]'}
 																					}),
 																				_1: {ctor: '[]'}
@@ -9100,7 +9100,7 @@ var _user$project$App$scanareaScreen = function (model) {
 																						{ctor: '[]'},
 																						{
 																							ctor: '::',
-																							_0: _elm_lang$html$Html$text('Student'),
+																							_0: _elm_lang$html$Html$text('Teacher'),
 																							_1: {ctor: '[]'}
 																						}),
 																					_1: {ctor: '[]'}
@@ -9154,10 +9154,10 @@ var _user$project$App$scanareaScreen = function (model) {
 											_user$project$App$mapWrapper,
 											{
 												ctor: '::',
-												_0: A2(_elm_lang$html$Html_Attributes$attribute, 'latitude', '12.942149'),
+												_0: A2(_elm_lang$html$Html_Attributes$attribute, 'latitude', '36.640101'),
 												_1: {
 													ctor: '::',
-													_0: A2(_elm_lang$html$Html_Attributes$attribute, 'longitude', '77.622002'),
+													_0: A2(_elm_lang$html$Html_Attributes$attribute, 'longitude', '-119.680449'),
 													_1: {ctor: '[]'}
 												}
 											},
@@ -9500,7 +9500,7 @@ var _user$project$App$contactScreen = function (model) {
 													_0: A2(_elm_lang$html$Html_Attributes$attribute, 'latitude', '36.640101'),
 													_1: {
 														ctor: '::',
-														_0: A2(_elm_lang$html$Html_Attributes$attribute, 'longitude', '119.680449'),
+														_0: A2(_elm_lang$html$Html_Attributes$attribute, 'longitude', '-119.680449'),
 														_1: {ctor: '[]'}
 													}
 												},
