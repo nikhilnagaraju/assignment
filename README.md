@@ -1,6 +1,13 @@
-http://nikhilnagaraju.github.io/assignment 
+## Documentation
 
-## Welcome to GitHub Pages
+The Web App developed for the assignment can be viewed here at http://nikhilnagaraju.github.io/assignment
+
+The Scan Area screen of Web app can be accessed with any of the below given crendentials
+
+username -`sachin`
+pass - `itssachin`
+
+
 
 You can use the [editor on GitHub](https://github.com/nikhilnagaraju/assignment/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
