@@ -288,34 +288,34 @@ scanareaScreen model =
                     [ div  [class "row"]
                      [ h5 [] [ text "Select user to Request Meetup" ] ]
                      , div [class "list-group row", style [("max-width", "400px")]] 
-                        [ a [class "list-group-item list-group-item-action list-group-item-success align-items-start", onClick (ClickUser "sachin")] 
+                        [ a [class "list-group-item list-group-item-action list-group-item-info align-items-start", onClick (ClickUser "sachin")] 
                             [ span [class "badge"] [h4 [] [ text "Student"]]
                             , h4 [] [ text "Sachin" ]
                             , p [] [ text "Courses : Java, C, C++"]
                             ]
-                        , a [class "list-group-item list-group-item-action list-group-item-info align-items-start", onClick (ClickUser "vinay") ] 
+                        , a [class "list-group-item list-group-item-action list-group-item-success align-items-start", onClick (ClickUser "vinay") ] 
                             [ span [class "badge"] [h4 [] [ text "Teacher"]]
                             , h4 [] [ text "Vinay" ]
                             , p [] [ text "Courses : Java"]
                             ]
-                        , a [class "list-group-item list-group-item-action list-group-item-success align-items-start", onClick (ClickUser "chuck") ] 
+                        , a [class "list-group-item list-group-item-action list-group-item-info align-items-start", onClick (ClickUser "chuck") ] 
                             [ span [class "badge"] [h4 [] [ text "Student"]]
                             , h4 [] [ text "Chuck " ]
                             , p [] [ text "Interested in : Java"]
                             ]
-                        , a [class "list-group-item list-group-item-action list-group-item-info align-items-start", onClick (ClickUser "robb") ] 
+                        , a [class "list-group-item list-group-item-action list-group-item-success align-items-start", onClick (ClickUser "robb") ] 
                             [ span [class "badge"] [h4 [] [ text "Teacher"]]
                             , h4 [] [ text "Robb " ]
                             , p [] [ text "Courses : Python"]
                             ]
                         ,a [class "list-group-item list-group-item-action list-group-item-info align-items-start", onClick (ClickUser "john") ] 
                             [ span [class "badge"] [h4 [] [ text "Student"]]
-                            , h4 [] [ text "john" ]
+                            , h4 [] [ text "John" ]
                             , p [] [ text "Courses : Java"]
                             ]
                         ,a [class "list-group-item list-group-item-action list-group-item-info align-items-start", onClick (ClickUser "praveen") ] 
                             [ span [class "badge"] [h4 [] [ text "Student"]]
-                            , h4 [] [ text "praveen" ]
+                            , h4 [] [ text "Praveen" ]
                             , p [] [ text "Courses : Java"]
                             ]
                     
@@ -361,7 +361,7 @@ contactScreen model =
         , div [ class "row"]
             [ h2 [ class " text-center"] [ text model.checkout ] 
             , div [ class "   row" ]
-                [ div [class "col-md-offset-4 col-md-5"] 
+                [ div [class "col-md-offset-3 col-md-6"] 
                     [ div [ class "jumbotronTranspMod jumbotron text-left" ] 
                         [   table [ ] 
                                 [   tr [] 
@@ -371,7 +371,7 @@ contactScreen model =
                                         ]
                                 ,   tr []
                                         [   td [] [ h4 [] [ text "Contact : "]  ] 
-                                        , td [] [ h4 [] [ a[href ("whatsapp://send?text=Hi there!&phone=" ++ (toString member.phno)), class "btn btn-link"] [ text "Ping me on whatsapp!!" ] ]]
+                                        , td [] [ h4 [] [ a[href ("whatsapp://send?text=Hi there!&phone=" ++ (toString member.phno)), class "btn btn-link "] [ text "Ping me on whatsapp!!" ] ]]
                                         ] 
                                 , tr []
                                     [ td [] [ h4 [] [text "Email : "] ]
@@ -382,8 +382,8 @@ contactScreen model =
             ]
             , div [ class "col-md-12" ] 
                 [ mapWrapper
-                    [ attribute "latitude" "12.942149"
-                    , attribute "longitude" "77.622002"
+                    [ attribute "latitude" "36.640101"
+                    , attribute "longitude" "-119.680449"
                     --, attribute "drag-events" "true"
                     ]
                     []
@@ -399,7 +399,7 @@ contactScreen model =
 
 navbar : String -> Html Msg
 navbar name = 
-    nav [ class "navbar" ] 
+    nav [ class "navbar " ] 
         [ div [ class "container-fluid" ]
             [ div [ class "navbar-header navbar-right" ]
                 [ a [ class "navbar-brand " ]

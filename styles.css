@@ -34,7 +34,7 @@ blockquote {
  font-size: 21px;
  color: white;
  font-weight: 200;
- background-color: #cfcfcf;
+ background-color: #4db6ac;
 }
 
 table {
@@ -52,4 +52,13 @@ google-map {
 
 body{
 background-color: #eceff1;
+}
+
+
+navbar navbar-nav li{
+    background-color: #6f6f6f;
+}
+
+a:link{
+    color: white;
 }

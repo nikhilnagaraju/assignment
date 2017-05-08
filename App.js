@@ -8612,7 +8612,7 @@ var _user$project$App$navbar = function (name) {
 		_elm_lang$html$Html$nav,
 		{
 			ctor: '::',
-			_0: _elm_lang$html$Html_Attributes$class('navbar'),
+			_0: _elm_lang$html$Html_Attributes$class('navbar '),
 			_1: {ctor: '[]'}
 		},
 		{
@@ -8781,7 +8781,7 @@ var _user$project$App$scanareaScreen = function (model) {
 													_elm_lang$html$Html$a,
 													{
 														ctor: '::',
-														_0: _elm_lang$html$Html_Attributes$class('list-group-item list-group-item-action list-group-item-success align-items-start'),
+														_0: _elm_lang$html$Html_Attributes$class('list-group-item list-group-item-action list-group-item-info align-items-start'),
 														_1: {
 															ctor: '::',
 															_0: _elm_lang$html$Html_Events$onClick(
@@ -8840,7 +8840,7 @@ var _user$project$App$scanareaScreen = function (model) {
 														_elm_lang$html$Html$a,
 														{
 															ctor: '::',
-															_0: _elm_lang$html$Html_Attributes$class('list-group-item list-group-item-action list-group-item-info align-items-start'),
+															_0: _elm_lang$html$Html_Attributes$class('list-group-item list-group-item-action list-group-item-success align-items-start'),
 															_1: {
 																ctor: '::',
 																_0: _elm_lang$html$Html_Events$onClick(
@@ -8899,7 +8899,7 @@ var _user$project$App$scanareaScreen = function (model) {
 															_elm_lang$html$Html$a,
 															{
 																ctor: '::',
-																_0: _elm_lang$html$Html_Attributes$class('list-group-item list-group-item-action list-group-item-success align-items-start'),
+																_0: _elm_lang$html$Html_Attributes$class('list-group-item list-group-item-action list-group-item-info align-items-start'),
 																_1: {
 																	ctor: '::',
 																	_0: _elm_lang$html$Html_Events$onClick(
@@ -8958,7 +8958,7 @@ var _user$project$App$scanareaScreen = function (model) {
 																_elm_lang$html$Html$a,
 																{
 																	ctor: '::',
-																	_0: _elm_lang$html$Html_Attributes$class('list-group-item list-group-item-action list-group-item-info align-items-start'),
+																	_0: _elm_lang$html$Html_Attributes$class('list-group-item list-group-item-action list-group-item-success align-items-start'),
 																	_1: {
 																		ctor: '::',
 																		_0: _elm_lang$html$Html_Events$onClick(
@@ -9053,7 +9053,7 @@ var _user$project$App$scanareaScreen = function (model) {
 																				{ctor: '[]'},
 																				{
 																					ctor: '::',
-																					_0: _elm_lang$html$Html$text('john'),
+																					_0: _elm_lang$html$Html$text('John'),
 																					_1: {ctor: '[]'}
 																				}),
 																			_1: {
@@ -9112,7 +9112,7 @@ var _user$project$App$scanareaScreen = function (model) {
 																					{ctor: '[]'},
 																					{
 																						ctor: '::',
-																						_0: _elm_lang$html$Html$text('praveen'),
+																						_0: _elm_lang$html$Html$text('Praveen'),
 																						_1: {ctor: '[]'}
 																					}),
 																				_1: {
@@ -9275,7 +9275,7 @@ var _user$project$App$contactScreen = function (model) {
 											_elm_lang$html$Html$div,
 											{
 												ctor: '::',
-												_0: _elm_lang$html$Html_Attributes$class('col-md-offset-4 col-md-5'),
+												_0: _elm_lang$html$Html_Attributes$class('col-md-offset-3 col-md-6'),
 												_1: {ctor: '[]'}
 											},
 											{
@@ -9405,7 +9405,7 @@ var _user$project$App$contactScreen = function (model) {
 																												_elm_lang$core$Basics$toString(member.phno))),
 																										_1: {
 																											ctor: '::',
-																											_0: _elm_lang$html$Html_Attributes$class('btn btn-link'),
+																											_0: _elm_lang$html$Html_Attributes$class('btn btn-link '),
 																											_1: {ctor: '[]'}
 																										}
 																									},
@@ -9497,10 +9497,10 @@ var _user$project$App$contactScreen = function (model) {
 												_user$project$App$mapWrapper,
 												{
 													ctor: '::',
-													_0: A2(_elm_lang$html$Html_Attributes$attribute, 'latitude', '12.942149'),
+													_0: A2(_elm_lang$html$Html_Attributes$attribute, 'latitude', '36.640101'),
 													_1: {
 														ctor: '::',
-														_0: A2(_elm_lang$html$Html_Attributes$attribute, 'longitude', '77.622002'),
+														_0: A2(_elm_lang$html$Html_Attributes$attribute, 'longitude', '119.680449'),
 														_1: {ctor: '[]'}
 													}
 												},
